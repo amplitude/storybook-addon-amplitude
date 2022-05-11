@@ -7,9 +7,11 @@ import amplitude from "amplitude-js";
 
 addons.register("storybook/amplitude", (api) => {
   if (process.env.NODE_ENV === "production") {
-    amplitude.getInstance().init(process.env.DS_STORYBOOK_AMPLITUDE_API_KEY);
+    // @ts-ignore
+    amplitude.getInstance().init(window.AMPLITUDE_PROD_API_KEY);
   } else {
-    amplitude.getInstance().init("");
+    // @ts-ignore
+    amplitude.getInstance().init(window.AMPLITUDE_DEV_API_KEY);
   }
 
   api.on(STORY_CHANGED, () => {
