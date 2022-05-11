@@ -1,4 +1,5 @@
 # Storybook Addon storybook-addon-amplitude
+
 A storybook addon to capture events in Amplitude
 
 ### Development scripts
