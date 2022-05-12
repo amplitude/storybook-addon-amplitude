@@ -1,36 +1,44 @@
-import { addons, types } from "@storybook/addons";
+import { addons } from "@storybook/addons";
+import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
+import { parsePath } from "../parsePath";
 
-import { ADDON_ID, TOOL_ID, PANEL_ID, TAB_ID } from "../constants";
-import { Tool } from "../Tool";
-import { Panel } from "../Panel";
-import { Tab } from "../Tab";
+// @ts-ignore
+import amplitude from "amplitude-js";
 
-// Register the addon
-addons.register(ADDON_ID, () => {
-  // Register the tool
-  addons.add(TOOL_ID, {
-    type: types.TOOL,
-    title: "My addon",
-    match: ({ viewMode }) => !!(viewMode && viewMode.match(/^(story|docs)$/)),
-    render: Tool,
+addons.register("storybook/amplitude", (api) => {
+  if (process.env.NODE_ENV === "production") {
+    // @ts-ignore
+    amplitude.getInstance().init(window.AMPLITUDE_PROD_API_KEY);
+  } else {
+    // @ts-ignore
+    amplitude.getInstance().init(window.AMPLITUDE_DEV_API_KEY);
+  }
+
+  api.on(STORY_CHANGED, () => {
+    const { path } = api.getUrlState();
+    const parsedPath = parsePath(path);
+    /**
+     * When a user switches to a new page, emit an event to Amplitude
+     *
+     * example event: {event_type: "viewed documentation", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
+     */
+    amplitude.getInstance().logEvent(`viewed documentation`, {
+      category: `${parsedPath.category?.split("-")[0]}`,
+      page: parsedPath.page,
+    });
   });
 
-  // Register the panel
-  addons.add(PANEL_ID, {
-    type: types.PANEL,
-    title: "My addon",
-    match: ({ viewMode }) => viewMode === "story",
-    render: Panel,
-  });
-
-  // Register the tab
-  addons.add(TAB_ID, {
-    type: types.TAB,
-    title: "My addon",
-    //👇 Checks the current route for the story
-    route: ({ storyId }) => `/myaddon/${storyId}`,
-    //👇 Shows the Tab UI element in myaddon view mode
-    match: ({ viewMode }) => viewMode === "myaddon",
-    render: Tab,
+  api.on(STORY_ARGS_UPDATED, () => {
+    const { path } = api.getUrlState();
+    const parsedPath = parsePath(path);
+    /**
+     * When a user changes a story's args, emit an event to Amplitude
+     *
+     * example event: {event_type: "updated story args", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
+     */
+    amplitude.getInstance().logEvent(`updated story args`, {
+      category: parsedPath.category?.split("-")[0],
+      page: parsedPath.page,
+    });
   });
 });

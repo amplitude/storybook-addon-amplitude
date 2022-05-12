@@ -1,15 +1,17 @@
 {
-  "name": "storybook-addon-kit",
-  "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "name": "@amplitude/storybook-addon-amplitude",
+  "version": "0.0.2",
+  "description": "A storybook addon to capture events in Amplitude",
   "keywords": [
+    "amplitude",
+    "design-systems",
     "storybook-addons"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/amplitude/storybook-addon-amplitude"
   },
-  "author": "package-author",
+  "author": "Mae Capozzi <mae.capozzi@amplitude.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -21,7 +23,6 @@
     "*.d.ts"
   ],
   "scripts": {
-    "postinstall": "node scripts/welcome.js",
     "clean": "rimraf ./dist",
     "buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
     "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
@@ -80,10 +81,14 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Amplitude Storybook Addon",
     "supportedFrameworks": [
-      "supported-frameworks"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "dependencies": {
+    "amplitude-js": "^8.18.1",
+    "global": "^4.4.0"
   }
 }
