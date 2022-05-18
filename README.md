@@ -53,7 +53,9 @@ When a user switches to a new page, this addon emits an event that looks like th
 Tracking this event in this way allows you to build charts in Amplitude to show:
 
 a) How many people have viewed your Storybook instance over time
+
 b) What category of pages people are viewing most frequently
+
 c) What pages people are viewing most frequently
 
 When a user changes a story's args, this addon emits an event that looks like this:
@@ -69,5 +71,7 @@ When a user changes a story's args, this addon emits an event that looks like th
 ```
 
 a) How often people use the story args functionality
+
 b) In which category of pages people update the story args most frequently 
+
 c) On which pages people update the story args most frequently
