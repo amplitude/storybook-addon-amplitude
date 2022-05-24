@@ -22,7 +22,7 @@ in `storybook/main.js`
 ```bash
 module.exports: {
   addons: [
-    'storybook-addon-amplitude/preset',
+    '@amplitude/storybook-addon-amplitude/preset',
   ]
 }
 ```
