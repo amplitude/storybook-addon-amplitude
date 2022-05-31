@@ -4,10 +4,7 @@ A storybook addon to capture events in [Amplitude](https://amplitude.com/).
 
 ## What does it do?
 
-When configured correctly, this storybook addon will send events to your Amplitude instance in two cases:
-
-1. If a user navigates from one story to another
-2. If a user modifies story args
+The Amplitude Storybook add-on emits events to Amplitude on two different occasions: when a user navigates to a new page and when a user changes a story's args.
 
 ## Usage Guidelines
 
@@ -36,9 +33,8 @@ window.AMPLITUDE_PROD_API_KEY = '<amplitude-prod-api-key>';
 
 ## Event Taxonomy
 
-This storybook addon emits events to Amplitude on two different occasions, when a user switches to a new page and when a user changes a story's args.
-
-When a user switches to a new page, this addon emits an event that looks like this:
+### User navigates to a new page
+When a user switches to a new page, this add-on emits an event to Amplitude that looks like this:
 
 ```
 {
@@ -50,15 +46,14 @@ When a user switches to a new page, this addon emits an event that looks like th
 }
 ```
 
-Tracking this event in this way allows you to build charts in Amplitude to show:
+Tracking the event in this way allows you to build charts in Amplitude to show:
 
-a) How many people have viewed your Storybook instance over time
+1. How many people have viewed your Storybook over time
+2. What categories people are viewing most frequently
+3. What pages people are viewing most frequently
 
-b) What category of pages people are viewing most frequently
-
-c) What pages people are viewing most frequently
-
-When a user changes a story's args, this addon emits an event that looks like this:
+### User changes a story’s args
+When a user changes a story's args, this add-on emits an event that looks like this:
 
 ```
 {
@@ -69,9 +64,10 @@ When a user changes a story's args, this addon emits an event that looks like th
   }
 }
 ```
+ 
+Tracking the event in this way allows you to build charts in Amplitude to answer:
 
-a) How often people use the story args functionality
+1. How often do people use the story args functionality?
+2. In which category of pages people update the story args most frequently?
+3. On which pages people update the story args most frequently?
 
-b) In which category of pages people update the story args most frequently 
-
-c) On which pages people update the story args most frequently
