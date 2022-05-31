@@ -1,3 +1,15 @@
+# v0.0.6 (Tue May 31 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v0.0.5 (Tue May 24 2022)
 
 #### ⚠️ Pushed to `main`
