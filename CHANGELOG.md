@@ -1,3 +1,21 @@
+# v0.0.7 (Wed Jun 01 2022)
+
+#### 🐛 Bug Fix
+
+- Upgrade @babel packages [#9](https://github.com/amplitude/storybook-addon-amplitude/pull/9) ([@maecapozzi](https://github.com/maecapozzi))
+- Upgrade patch dependencies [#8](https://github.com/amplitude/storybook-addon-amplitude/pull/8) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Bump tar from 6.1.0 to 6.1.11 [#7](https://github.com/amplitude/storybook-addon-amplitude/pull/7) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v0.0.6 (Tue May 31 2022)
 
 #### ⚠️ Pushed to `main`
