@@ -1,3 +1,4 @@
+import { window as globalWindow } from "global";
 import { addons } from "@storybook/addons";
 import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
 import { parsePath } from "../parsePath";
@@ -7,11 +8,9 @@ import amplitude from "amplitude-js";
 
 addons.register("storybook/amplitude", (api) => {
   if (process.env.NODE_ENV === "production") {
-    // @ts-ignore
-    amplitude.getInstance().init(window.AMPLITUDE_PROD_API_KEY);
+    amplitude.getInstance().init(globalWindow.AMPLITUDE_PROD_API_KEY);
   } else {
-    // @ts-ignore
-    amplitude.getInstance().init(window.AMPLITUDE_DEV_API_KEY);
+    amplitude.getInstance().init(globalWindow.AMPLITUDE_DEV_API_KEY);
   }
 
   api.on(STORY_CHANGED, () => {
