@@ -1,3 +1,15 @@
+# v0.0.10 (Wed Jun 15 2022)
+
+#### 🐛 Bug Fix
+
+- Address security alerts in `trim`, `trim-newlines`, and `glob-parent` [#13](https://github.com/amplitude/storybook-addon-amplitude/pull/13) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v0.0.9 (Wed Jun 15 2022)
 
 #### ⚠️ Pushed to `main`
