@@ -69,6 +69,10 @@
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
+  "resolutions": {
+    "trim": "^0.0.3",
+    "trim-newlines": "3.0.1"
+  },
   "peerDependenciesMeta": {
     "react": {
       "optional": true
