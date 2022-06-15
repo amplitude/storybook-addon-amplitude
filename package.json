@@ -70,6 +70,7 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "resolutions": {
+    "glob-parent": "^5.1.2",
     "trim": "^0.0.3",
     "trim-newlines": "3.0.1"
   },
