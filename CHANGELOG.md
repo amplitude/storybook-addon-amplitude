@@ -1,3 +1,15 @@
+# v0.0.11 (Thu Jun 16 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v0.0.10 (Wed Jun 15 2022)
 
 #### 🐛 Bug Fix
