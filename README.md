@@ -49,6 +49,19 @@ window.AMPLITUDE_PROD_API_KEY = '<amplitude-prod-api-key>';
 
 Now your storybook will begin emitting events to your project in Amplitude. You’re ready to start creating charts in Amplitude!
 
+## Example Charts
+
+**Weekly unique users viewing Storybook documentation**
+
+<img width="1494" alt="Screen Shot 2022-05-24 at 1 04 57 PM" src="https://user-images.githubusercontent.com/11462208/174133601-7f29014b-1e6e-4060-ba4c-ad478b43607e.png">
+
+
+
+**Most commonly referenced Storybook categories**
+
+<img width="1792" alt="Screen Shot 2022-05-31 at 1 54 41 PM" src="https://user-images.githubusercontent.com/11462208/174133334-251dd4b8-29ae-402f-a32e-3a98ceeb4747.png">
+
+
 ## Event Taxonomy
 
 ### User navigates to a new page
@@ -89,3 +102,7 @@ Tracking the event in this way allows you to build charts in Amplitude to answer
 2. In which category of pages people update the story args most frequently?
 3. On which pages people update the story args most frequently?
 
+## Credits
+Created by: [Mae Capozzi](https://github.com/maecapozzi)
+
+Maintained by: [Mae Capozzi](https://github.com/maecapozzi), [Jack McCloy](https://github.com/jackmccloy), and [Jimmy Wilson](https://github.com/jimmynotjim)
