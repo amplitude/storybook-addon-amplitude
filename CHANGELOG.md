@@ -1,3 +1,15 @@
+# v0.0.12 (Mon Jun 27 2022)
+
+#### 🐛 Bug Fix
+
+- Silence TS warning for global window [#12](https://github.com/amplitude/storybook-addon-amplitude/pull/12) ([@kaelig](https://github.com/kaelig))
+
+#### Authors: 1
+
+- Kaelig Deloumeau-Prigent ([@kaelig](https://github.com/kaelig))
+
+---
+
 # v0.0.11 (Thu Jun 16 2022)
 
 #### ⚠️ Pushed to `main`
