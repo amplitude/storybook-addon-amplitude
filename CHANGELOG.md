@@ -1,3 +1,15 @@
+# v0.0.13 (Tue Jun 28 2022)
+
+#### 🐛 Bug Fix
+
+- Bump package to 1.0.0 [#14](https://github.com/amplitude/storybook-addon-amplitude/pull/14) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v0.0.12 (Mon Jun 27 2022)
 
 #### 🐛 Bug Fix
