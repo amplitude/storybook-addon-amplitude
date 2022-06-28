@@ -2,6 +2,8 @@
 
 A storybook addon to capture events in [Amplitude](https://amplitude.com/).
 
+Read the [blog post here](https://amplitude.engineering/product-analytics-for-storybook-introducing-the-amplitude-storybook-add-on-e8857fb8168a).
+
 ## What does it do?
 
 The Amplitude Storybook add-on emits events to Amplitude on two different occasions: when a user navigates to a new page and when a user changes a story's args.
