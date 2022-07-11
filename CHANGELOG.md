@@ -1,3 +1,15 @@
+# v1.0.3 (Mon Jul 11 2022)
+
+#### 🐛 Bug Fix
+
+- Upgrade patch dependencies [#17](https://github.com/amplitude/storybook-addon-amplitude/pull/17) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.2 (Tue Jun 28 2022)
 
 #### 🐛 Bug Fix
