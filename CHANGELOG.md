@@ -1,3 +1,20 @@
+# v1.0.5 (Wed Aug 10 2022)
+
+#### 🐛 Bug Fix
+
+- 2022-08-08 Upgrade dependencies [#21](https://github.com/amplitude/storybook-addon-amplitude/pull/21) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Bump terser from 4.8.0 to 4.8.1 [#20](https://github.com/amplitude/storybook-addon-amplitude/pull/20) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.4 (Tue Jul 12 2022)
 
 #### 🐛 Bug Fix
