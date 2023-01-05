@@ -1,3 +1,23 @@
+# v1.0.6 (Thu Jan 05 2023)
+
+#### 🐛 Bug Fix
+
+- Upgrade dependencies [#28](https://github.com/amplitude/storybook-addon-amplitude/pull/28) ([@maecapozzi](https://github.com/maecapozzi))
+- Upgrade dependencies [#25](https://github.com/amplitude/storybook-addon-amplitude/pull/25) ([@maecapozzi](https://github.com/maecapozzi))
+- Upgrade dependencies [#24](https://github.com/amplitude/storybook-addon-amplitude/pull/24) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Bump decode-uri-component from 0.2.0 to 0.2.2 [#27](https://github.com/amplitude/storybook-addon-amplitude/pull/27) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump loader-utils from 1.4.0 to 1.4.2 [#26](https://github.com/amplitude/storybook-addon-amplitude/pull/26) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.5 (Wed Aug 10 2022)
 
 #### 🐛 Bug Fix
