@@ -1,3 +1,20 @@
+# v1.0.12 (Thu Jan 12 2023)
+
+#### 🐛 Bug Fix
+
+- Upgrade babel dependency [#31](https://github.com/amplitude/storybook-addon-amplitude/pull/31) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Bump json5 from 1.0.1 to 1.0.2 [#29](https://github.com/amplitude/storybook-addon-amplitude/pull/29) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.6 (Thu Jan 05 2023)
 
 #### 🐛 Bug Fix
