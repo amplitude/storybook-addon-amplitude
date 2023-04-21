@@ -1,3 +1,20 @@
+# v1.0.16 (Fri Apr 21 2023)
+
+#### 🐛 Bug Fix
+
+- upgrade to new analytics-browser SDK [#38](https://github.com/amplitude/storybook-addon-amplitude/pull/38) ([@jimmynotjim](https://github.com/jimmynotjim))
+
+#### 🔩 Dependency Updates
+
+- Bump concurrently to 7.6.0 [#36](https://github.com/amplitude/storybook-addon-amplitude/pull/36) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 2
+
+- Jimmy Wilson ([@jimmynotjim](https://github.com/jimmynotjim))
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.15 (Mon Mar 06 2023)
 
 #### 🐛 Bug Fix
