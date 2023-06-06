@@ -1,3 +1,19 @@
+# v1.0.17 (Tue Jun 06 2023)
+
+#### 🐛 Bug Fix
+
+- Revert "Upgrade dependencies" [#41](https://github.com/amplitude/storybook-addon-amplitude/pull/41) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Upgrade dependencies [#40](https://github.com/amplitude/storybook-addon-amplitude/pull/40) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### Authors: 1
+
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.16 (Fri Apr 21 2023)
 
 #### 🐛 Bug Fix
