@@ -1,6 +1,6 @@
 {
   "name": "@amplitude/storybook-addon-amplitude",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A storybook addon to capture events in Amplitude",
   "keywords": [
     "amplitude",
