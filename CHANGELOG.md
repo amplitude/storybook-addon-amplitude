@@ -1,3 +1,21 @@
+# v1.0.19 (Mon Aug 21 2023)
+
+#### 🐛 Bug Fix
+
+- Upgrade dependencies [#45](https://github.com/amplitude/storybook-addon-amplitude/pull/45) ([@maecapozzi](https://github.com/maecapozzi))
+
+#### 🔩 Dependency Updates
+
+- Bump word-wrap from 1.2.3 to 1.2.4 [#44](https://github.com/amplitude/storybook-addon-amplitude/pull/44) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump semver from 5.7.1 to 5.7.2 [#43](https://github.com/amplitude/storybook-addon-amplitude/pull/43) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+
+---
+
 # v1.0.18 (Tue Jun 06 2023)
 
 #### 🐛 Bug Fix
