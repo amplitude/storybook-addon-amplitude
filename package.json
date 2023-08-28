@@ -41,10 +41,10 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "@babel/preset-typescript": "^7.13.0",
+    "@babel/preset-typescript": "^7.22.11",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/react": "^6.4.0",
     "auto": "^10.43.0",
