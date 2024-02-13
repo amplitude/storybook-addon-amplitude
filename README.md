@@ -49,30 +49,6 @@ window.AMPLITUDE_DEV_API_KEY = '<amplitude-dev-api-key>';
 window.AMPLITUDE_PROD_API_KEY = '<amplitude-prod-api-key>';
 ```
 
-If you want to post to the EU endpoint make sure to set the `serverUrl` option:
-
-```ts
-window.AMPLITUDE_OPTIONS = {
-  serverUrl: 'https://api.eu.amplitude.com/2/httpapi',
-};
-```
-
-> Read more: [Configurations](https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/#configuration), [Endpoints](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/#endpoints)
-
-If you are in a typescript project you might want to add the following declarations:
-
-```ts
-declare global {
-  interface Window {
-    AMPLITUDE_DEV_API_KEY: string;
-    AMPLITUDE_PROD_API_KEY: string;
-    AMPLITUDE_OPTIONS: {
-      serverUrl?: string;
-    };
-  }
-}
-```
-
 Now your storybook will begin emitting events to your project in Amplitude. You’re ready to start creating charts in Amplitude!
 
 ## Example Charts
