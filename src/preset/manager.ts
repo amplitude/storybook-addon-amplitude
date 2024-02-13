@@ -3,21 +3,13 @@ import { addons } from "@storybook/addons";
 import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
 import { parsePath } from "../parsePath";
 
-import * as amplitude from "@amplitude/analytics-browser";
+import * as amplitude from "@amplitude/analytics-browser"
 
 addons.register("storybook/amplitude", (api) => {
   if (process.env.NODE_ENV === "production") {
-    amplitude.init(
-      globalWindow.AMPLITUDE_PROD_API_KEY,
-      null,
-      globalWindow.AMPLITUDE_OPTIONS
-    );
+    amplitude.init(globalWindow.AMPLITUDE_PROD_API_KEY);
   } else {
-    amplitude.init(
-      globalWindow.AMPLITUDE_DEV_API_KEY,
-      null,
-      globalWindow.AMPLITUDE_OPTIONS
-    );
+    amplitude.init(globalWindow.AMPLITUDE_DEV_API_KEY);
   }
 
   api.on(STORY_CHANGED, () => {
