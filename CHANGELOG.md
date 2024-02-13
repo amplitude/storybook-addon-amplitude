@@ -1,3 +1,16 @@
+# v1.1.0 (Tue Feb 13 2024)
+
+#### 🚀 Enhancement
+
+- docs: add documentation for amplitude options configuration [#50](https://github.com/amplitude/storybook-addon-amplitude/pull/50) ([@tijmenvangurp](https://github.com/tijmenvangurp))
+- fix: amplitude initialization in preset manager [#50](https://github.com/amplitude/storybook-addon-amplitude/pull/50) ([@tijmenvangurp](https://github.com/tijmenvangurp))
+
+#### Authors: 1
+
+- Tijmen van Gurp ([@tijmenvangurp](https://github.com/tijmenvangurp))
+
+---
+
 # v1.0.20 (Tue Aug 29 2023)
 
 #### 🐛 Bug Fix
