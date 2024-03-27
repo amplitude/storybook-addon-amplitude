@@ -47,6 +47,7 @@
     "@babel/preset-typescript": "^7.22.11",
     "@storybook/addon-essentials": "^7.0.0",
     "@storybook/react": "^7.0.0",
+    "@types/webpack-env": "^1.18.4",
     "auto": "^10.43.0",
     "babel-loader": "^9.1.2",
     "boxen": "^5.0.1",
@@ -70,6 +71,7 @@
   },
   "resolutions": {
     "glob-parent": "^5.1.2",
+    "jackspeak": "2.1.1",
     "trim": "^0.0.3",
     "trim-newlines": "3.0.1"
   },
