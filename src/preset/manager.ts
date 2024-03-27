@@ -1,5 +1,5 @@
 import { window as globalWindow } from "global";
-import { addons } from "@storybook/addons";
+import { addons } from "@storybook/manager-api";
 import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
 import { parsePath } from "../parsePath";
 
