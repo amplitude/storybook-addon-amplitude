@@ -48,7 +48,7 @@
     "@storybook/addon-essentials": "^7.0.0",
     "@storybook/react": "^7.0.0",
     "@types/webpack-env": "^1.18.4",
-    "auto": "^10.43.0",
+    "auto": "^11.1.2",
     "babel-loader": "^9.1.2",
     "boxen": "^5.0.1",
     "concurrently": "^7.6.0",
