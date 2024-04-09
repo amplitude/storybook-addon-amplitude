@@ -71,6 +71,7 @@
   },
   "resolutions": {
     "glob-parent": "^5.1.2",
+    "jackspeak": "^2.3.5",
     "trim": "^0.0.3",
     "trim-newlines": "3.0.1"
   },
