@@ -1,3 +1,33 @@
+# v2.0.0 (Tue Apr 09 2024)
+
+#### 💥 Breaking Change
+
+- Update peer dependencies to drop react@^16.8.0 and add react@18.0.0 [#57](https://github.com/amplitude/storybook-addon-amplitude/pull/57) ([@maecapozzi](https://github.com/maecapozzi))
+- fixes yarn 1 and typescript errors [#57](https://github.com/amplitude/storybook-addon-amplitude/pull/57) ([@jimmynotjim](https://github.com/jimmynotjim))
+- feat: upgrade to storybook 7.0.0 [#57](https://github.com/amplitude/storybook-addon-amplitude/pull/57) ([@tijmenvangurp](https://github.com/tijmenvangurp))
+
+#### 🐛 Bug Fix
+
+- regenerate yarn.lock [#58](https://github.com/amplitude/storybook-addon-amplitude/pull/58) ([@maecapozzi](https://github.com/maecapozzi))
+- dont pin jackspeak [#58](https://github.com/amplitude/storybook-addon-amplitude/pull/58) ([@maecapozzi](https://github.com/maecapozzi))
+- Remove jackspeak [#58](https://github.com/amplitude/storybook-addon-amplitude/pull/58) ([@maecapozzi](https://github.com/maecapozzi))
+- Update jackspeak to the latest [#58](https://github.com/amplitude/storybook-addon-amplitude/pull/58) ([@maecapozzi](https://github.com/maecapozzi))
+- update the auto dependency to fix a bug in auto [#55](https://github.com/amplitude/storybook-addon-amplitude/pull/55) ([@jimmynotjim](https://github.com/jimmynotjim))
+
+#### 🔩 Dependency Updates
+
+- Bump browserify-sign from 4.2.1 to 4.2.2 [#48](https://github.com/amplitude/storybook-addon-amplitude/pull/48) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump @babel/traverse from 7.21.0 to 7.23.2 [#47](https://github.com/amplitude/storybook-addon-amplitude/pull/47) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jimmy Wilson ([@jimmynotjim](https://github.com/jimmynotjim))
+- Mae Capozzi ([@maecapozzi](https://github.com/maecapozzi))
+- Tijmen van Gurp ([@tijmenvangurp](https://github.com/tijmenvangurp))
+
+---
+
 # v1.1.0 (Tue Feb 13 2024)
 
 #### 🚀 Enhancement
