@@ -45,8 +45,7 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "@babel/preset-typescript": "^7.22.11",
-    "@storybook/addon-essentials": "^7.0.0",
-    "@storybook/react": "^7.0.0",
+    "@storybook/react": "^9.0.0",
     "auto": "^11.1.0",
     "@types/webpack-env": "^1.18.4",
     "babel-loader": "^9.1.2",
@@ -62,10 +61,7 @@
     "zx": "^1.14.1"
   },
   "peerDependencies": {
-    "@storybook/components": "^7.0.0",
-    "@storybook/core-events": "^7.0.0",
-    "@storybook/manager-api": "^7.0.0",
-    "@storybook/theming": "^7.0.0",
+    "storybook": "^9.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
