@@ -1,6 +1,6 @@
 import { window as globalWindow } from "global";
-import { addons } from "@storybook/manager-api";
-import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
+import { addons } from "storybook/manager-api";
+import { STORY_CHANGED, STORY_ARGS_UPDATED } from "storybook/internal/core-events";
 import { parsePath } from "../parsePath";
 
 import * as amplitude from "@amplitude/analytics-browser";
