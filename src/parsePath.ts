@@ -41,7 +41,7 @@ const getStory = (path: string) => {
 
 const buildError = (
   attr: string,
-  error: unknown
+  error: unknown,
 ): { category: string; page: string; story: string } => {
   console.error(`[storybook-amplitude] Error on get ${attr}`, error);
   return null;
