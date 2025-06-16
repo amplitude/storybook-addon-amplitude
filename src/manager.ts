@@ -1,7 +1,10 @@
 import { window as globalWindow } from "global";
 import { addons } from "storybook/manager-api";
-import { STORY_CHANGED, STORY_ARGS_UPDATED } from "storybook/internal/core-events";
-import { parsePath } from "../parsePath";
+import {
+  STORY_CHANGED,
+  STORY_ARGS_UPDATED,
+} from "storybook/internal/core-events";
+import { parsePath } from "./parsePath";
 
 import * as amplitude from "@amplitude/analytics-browser";
 
@@ -10,13 +13,13 @@ addons.register("storybook/amplitude", (api) => {
     amplitude.init(
       globalWindow.AMPLITUDE_PROD_API_KEY,
       null,
-      globalWindow.AMPLITUDE_OPTIONS
+      globalWindow.AMPLITUDE_OPTIONS,
     );
   } else {
     amplitude.init(
       globalWindow.AMPLITUDE_DEV_API_KEY,
       null,
-      globalWindow.AMPLITUDE_OPTIONS
+      globalWindow.AMPLITUDE_OPTIONS,
     );
   }
 
