@@ -143,7 +143,7 @@ When a user changes a story's args, this addon emits an event that looks like th
 {
   event_type: "updated story args",
   event_properties: {
-    category: "actions,
+    category: "actions",
     page: "button"
   }
 }
@@ -159,13 +159,13 @@ Tracking the event in this way allows you to build charts in Amplitude to answer
 
 ### Events not showing up in Amplitude?
 
-- Verify your API keys are correctly set in `storybook/manager.js`
-- Set `window.AMPLITUDE_OPTIONS = { logLevel: 4 };` in `storybook/manager.js` and check your browser's console for any error messages
+- Verify your API keys are correctly set in `storybook/manager.ts`
+- Set `window.AMPLITUDE_OPTIONS = { logLevel: 4 };` in `storybook/manager.ts` and check your browser's console for any error messages
 - Ensure you're using the correct server URL for your region
 
 ### Storybook not loading?
 
-- Make sure the addon is properly installed and configured in `storybook/main.js`
+- Make sure the addon is properly installed and configured in `storybook/main.ts`
 - Check that your Storybook version is compatible (9.0 or higher)
 
 ## Contributing

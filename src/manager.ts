@@ -32,7 +32,7 @@ addons.register("storybook/amplitude", (api) => {
      * example event: {event_type: "viewed documentation", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
     amplitude.track("viewed documentation", {
-      category: `${parsedPath.category?.split("-")[0]}`,
+      category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
   });
