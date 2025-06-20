@@ -1,11 +1,19 @@
 import { window as globalWindow } from "global";
-import { addons } from "@storybook/manager-api";
-import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
 import { parsePath } from "../parsePath";
 
 import * as amplitude from "@amplitude/analytics-browser";
 
-addons.register("storybook/amplitude", (api) => {
+interface StorybookAPI {
+  on: (event: string, callback: () => void) => void;
+  getUrlState: () => { path: string };
+}
+
+// In Storybook 8, addons is available globally
+declare const addons: {
+  register: (id: string, callback: (api: StorybookAPI) => void) => void;
+};
+
+addons.register("storybook/amplitude", (api: StorybookAPI) => {
   if (process.env.NODE_ENV === "production") {
     amplitude.init(
       globalWindow.AMPLITUDE_PROD_API_KEY,
@@ -20,7 +28,7 @@ addons.register("storybook/amplitude", (api) => {
     );
   }
 
-  api.on(STORY_CHANGED, () => {
+  api.on("STORY_CHANGED", () => {
     const { path } = api.getUrlState();
     const parsedPath = parsePath(path);
     /**
@@ -28,13 +36,13 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "viewed documentation", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`viewed documentation`, {
-      category: `${parsedPath.category?.split("-")[0]}`,
+    amplitude.track("viewed documentation", {
+      category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
   });
 
-  api.on(STORY_ARGS_UPDATED, () => {
+  api.on("STORY_ARGS_UPDATED", () => {
     const { path } = api.getUrlState();
     const parsedPath = parsePath(path);
     /**
@@ -42,7 +50,7 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "updated story args", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`updated story args`, {
+    amplitude.track("updated story args", {
       category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
