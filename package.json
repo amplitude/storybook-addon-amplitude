@@ -16,9 +16,9 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
+      "types": "./dist/ts/index.d.ts",
       "require": "./dist/cjs/index.js",
-      "types": "./dist/ts/index.d.ts"
+      "import": "./dist/esm/index.js"
     },
     "./manager": "./dist/esm/manager.js",
     "./package.json": "./package.json"
@@ -30,19 +30,21 @@
     "*.d.ts"
   ],
   "scripts": {
+    "build": "concurrently \"yarn build:babel\" \"yarn build:typescript\"",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
+    "build:babel:esm": "babel ./src -d ./dist/esm --env-name esm --extensions \".js,.jsx,.ts,.tsx\"",
+    "build:storybook": "storybook build",
+    "build:typescript": "tsc --declaration --emitDeclarationOnly --outDir ./dist/ts",
+    "build:watch": "concurrently \"yarn build:babel:esm -- --watch\" \"yarn build:typescript -- --watch\"",
     "clean": "rimraf ./dist",
-    "buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
-    "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
-    "buildBabel:esm": "babel ./src -d ./dist/esm --env-name esm --extensions \".js,.jsx,.ts,.tsx\"",
-    "buildTsc": "tsc --declaration --emitDeclarationOnly --outDir ./dist/ts",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "prebuild": "yarn clean",
-    "build": "concurrently \"yarn buildBabel\" \"yarn buildTsc\"",
-    "build:watch": "concurrently \"yarn buildBabel:esm -- --watch\" \"yarn buildTsc -- --watch\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "yarn build && auto shipit"
+    "release": "yarn build && auto shipit",
+    "storybook": "dotenv -e .env -- storybook dev -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^1.0.0 || ^2.0.0",
@@ -54,23 +56,34 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@storybook/addon-links": "^9.0.12",
+    "@storybook/addon-onboarding": "^9.0.12",
+    "@storybook/manager-api": "^8.6.14",
+    "@storybook/react": "^9.0.12",
+    "@storybook/react-vite": "^9.0.12",
     "@testing-library/dom": "10.4.0",
     "@types/node": "^24.0.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@types/webpack-env": "^1.18.8",
     "@storybook/react": "^9.0.0",
     "auto": "^11.1.0",
     "babel-loader": "^10.0.0",
     "boxen": "^8.0.1",
     "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
     "prettier": "^3.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "rimraf": "^6.0.1",
-    "storybook": "^9.0.0",
+    "storybook": "^9.0.12",
     "typescript": "^5.8.3",
+    "vite": "^6.3.5",
     "webpack": "^5.98.0",
     "zx": "^8.5.5"
   },
   "peerDependencies": {
-    "storybook": "^9.0.0"
+    "storybook": "^9.0.12"
   },
   "publishConfig": {
     "access": "public"
