@@ -1,3 +1,15 @@
+# v2.1.0 (Mon Jun 23 2025)
+
+#### 🚀 Enhancement
+
+- Upgrade to Storybook 8 [#64](https://github.com/amplitude/storybook-addon-amplitude/pull/64) ([@jimmynotjim](https://github.com/jimmynotjim))
+
+#### Authors: 1
+
+- Jimmy Wilson ([@jimmynotjim](https://github.com/jimmynotjim))
+
+---
+
 # v2.0.0 (Tue Apr 09 2024)
 
 #### 💥 Breaking Change
