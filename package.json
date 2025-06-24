@@ -12,7 +12,10 @@
     "url": "git+https://github.com/amplitude/storybook-addon-amplitude.git"
   },
   "type": "module",
-  "author": "Amplitude Inc",
+  "author": {
+    "name": "Jimmy Wilson",
+    "email": "jimmy@amplitude.com"
+  },
   "license": "MIT",
   "exports": {
     ".": {
@@ -38,6 +41,8 @@
     "build:typescript": "tsc --declaration --emitDeclarationOnly --outDir ./dist/ts",
     "build:watch": "concurrently \"yarn build:babel:esm -- --watch\" \"yarn build:typescript -- --watch\"",
     "clean": "rimraf ./dist",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "prebuild": "yarn clean",
@@ -51,6 +56,8 @@
     "global": "^4.4.0"
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "11.3.0",
+    "@auto-it/first-time-contributor": "11.3.0",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
@@ -66,6 +73,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/webpack-env": "^1.18.8",
+    "all-contributors-cli": "^6.26.1",
     "auto": "^11.1.0",
     "babel-loader": "^10.0.0",
     "boxen": "^8.0.1",
@@ -95,6 +103,22 @@
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   },
   "engines": {
-    "node": "20"
+    "node": ">=20"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "released",
+      "first-time-contributor",
+      [
+        "all-contributors",
+        {
+          "exclude": [
+            "dependabot",
+            "ci-services"
+          ]
+        }
+      ]
+    ]
   }
 }

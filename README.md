@@ -2,6 +2,8 @@
 
 A Storybook addon to capture events in [Amplitude](https://amplitude.com/).
 
+[![version][version-badge]][package] [![MIT License][license-badge]][license] [![Auto Release][auto-badge]][auto] [![PRs Welcome][prs-badge]][issues] [![All Contributors](https://img.shields.io/badge/all_contributors-6-green.svg?style=flat)](#contributors)
+
 Read the [blog post here](https://amplitude.engineering/product-analytics-for-storybook-introducing-the-amplitude-storybook-add-on-e8857fb8168a).
 
 ## Prerequisites
@@ -179,14 +181,44 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-**Owner:** [Amplitude](https://github.com/amplitude)
+**Owner:** [Amplitude Inc](https://github.com/amplitude)
 
-**Current Maintainer:** [Jimmy Wilson](https://github.com/jimmynotjim)
+**Current Maintainer:** [Jimmy Wilson (@jimmynotjim)](https://github.com/jimmynotjim)
 
 **Contributors:**
 
-- [Mae Capozzi](https://github.com/maecapozzi)
-- [Jack McCloy](https://github.com/jackmccloy)
-- [Tijmen van Gurp](https://github.com/tijmenvangurp)
-- [Kaelig Deloumeau-Prigent](https://github.com/kaelig)
-- [Slave Mitev](https://github.com/smitev)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jimmynotjim"><img src="https://avatars.githubusercontent.com/u/1280430?v=4?s=100" width="100px;" alt="Jimmy Wilson"/><br /><sub><b>Jimmy Wilson</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/issues?q=author%3Ajimmynotjim" title="Bug reports">🐛</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Code">💻</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Documentation">📖</a> <a href="#example-jimmynotjim" title="Examples">💡</a> <a href="#infra-jimmynotjim" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Ajimmynotjim" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Tests">⚠️</a> <a href="#tool-jimmynotjim" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/maecapozzi"><img src="https://avatars.githubusercontent.com/u/11462208?v=4?s=100" width="100px;" alt="Mae Capozzi"/><br /><sub><b>Mae Capozzi</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/issues?q=author%3Amaecapozzi" title="Bug reports">🐛</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Code">💻</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Documentation">📖</a> <a href="#example-maecapozzi" title="Examples">💡</a> <a href="#infra-maecapozzi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Amaecapozzi" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Tests">⚠️</a> <a href="#tool-maecapozzi" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jackmccloy"><img src="https://avatars.githubusercontent.com/u/7756138?v=4?s=100" width="100px;" alt="Jack McCloy"/><br /><sub><b>Jack McCloy</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jackmccloy" title="Code">💻</a> <a href="#infra-jackmccloy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Ajackmccloy" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/tijmenvangurp"><img src="https://avatars.githubusercontent.com/u/9990026?v=4?s=100" width="100px;" alt="Tijmen van Gurp"/><br /><sub><b>Tijmen van Gurp</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=tijmenvangurp" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kaelig"><img src="https://avatars.githubusercontent.com/u/85783?v=4?s=100" width="100px;" alt="Kaelig Deloumeau-Prigent"/><br /><sub><b>Kaelig Deloumeau-Prigent</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=kaelig" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/smitev"><img src="https://avatars.githubusercontent.com/u/1855067?v=4?s=100" width="100px;" alt="Slave Mitev"/><br /><sub><b>Slave Mitev</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=smitev" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bsoe003"><img src="https://avatars.githubusercontent.com/u/6354477?v=4?s=100" width="100px;" alt="Brian Soe"/><br /><sub><b>Brian Soe</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Absoe003" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vuamp"><img src="https://avatars.githubusercontent.com/u/111805785?v=4?s=100" width="100px;" alt="Vu Nguyen"/><br /><sub><b>Vu Nguyen</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Avuamp" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+[package]: https://www.npmjs.com/package/@amplitude/storybook-addon-amplitude
+[version-badge]: https://img.shields.io/npm/v/@amplitude/storybook-addon-amplitude.svg?style=flat
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license]: https://github.com/amplitude/storybook-addon-amplitude/blob/main/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat
+[issues]: https://github.com/amplitude/storybook-addon-amplitude/issues?q=archived:false+is:issue+is:open+sort:updated-desc+label%3A%22help%20wanted%22%2C%22good%20first%20issue%22
+[auto-badge]: https://img.shields.io/badge/release-auto.svg?colorA=888888&colorB=9B065A&label=auto
+[auto]: https://github.com/intuit/auto
