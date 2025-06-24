@@ -66,7 +66,6 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/webpack-env": "^1.18.8",
-    "@storybook/react": "^9.0.0",
     "auto": "^11.1.0",
     "babel-loader": "^10.0.0",
     "boxen": "^8.0.1",

@@ -1707,7 +1707,7 @@
     resolve "^1.22.8"
     tsconfig-paths "^4.2.0"
 
-"@storybook/react@9.0.13", "@storybook/react@^9.0.0":
+"@storybook/react@9.0.13", "@storybook/react@^9.0.12":
   version "9.0.13"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-9.0.13.tgz#fe81485beb922e652e120868c2a34417a27e7eaf"
   integrity sha512-kijh4vK7fSQCxs41SPCjN42gwD8I9vqgDYJV7XnQsIOJiwtWrsX+lMV4qVyN5SjTZF+HBV5oxD23XgQNlpZ31A==
