@@ -15,7 +15,8 @@ Read the [blog post here](https://amplitude.engineering/product-analytics-for-st
 | Storybook Version | Addon Version |
 | ----------------- | ------------- |
 | 9.x               | 3.x           |
-| 7.x               | 2.x           |
+| 8.x               | >= 2.1.0      |
+| 7.x               | 2.0.0-2.0.1   |
 | 6.x               | 1.x           |
 
 ## What does it do?
