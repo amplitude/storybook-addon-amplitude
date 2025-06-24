@@ -31,8 +31,8 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "viewed documentation", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`viewed documentation`, {
-      category: `${parsedPath.category?.split("-")[0]}`,
+    amplitude.track("viewed documentation", {
+      category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
   });
@@ -45,7 +45,7 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "updated story args", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`updated story args`, {
+    amplitude.track("updated story args", {
       category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });

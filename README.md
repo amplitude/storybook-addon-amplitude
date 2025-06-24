@@ -15,7 +15,8 @@ Read the [blog post here](https://amplitude.engineering/product-analytics-for-st
 | Storybook Version | Addon Version |
 | ----------------- | ------------- |
 | 9.x               | 3.x           |
-| 7.x               | 2.x           |
+| 8.x               | >= 2.1.0      |
+| 7.x               | 2.0.0-2.0.1   |
 | 6.x               | 1.x           |
 
 ## What does it do?
@@ -28,17 +29,19 @@ The first thing you'll need to do is sign up for Amplitude. If you already have 
 
 Once you have an account, you can create a new project which will have an associated API key.
 
+_Note: You may want to create both a prod project and a dev project so you can test without influencing your data_
+
 To do this, navigate to the Settings page.
 
-<img width="560" alt="Screen Shot 2022-06-15 at 4 12 52 PM" src="https://user-images.githubusercontent.com/11462208/173921586-d06571ba-c533-45e6-994f-b7c29c1e669e.png">
+![Amplitude organization settings nav](docs/screenshots/org-settings.png)
 
 Then, select Projects in the sidebar.
 
-<img width="462" alt="Screen Shot 2022-06-15 at 4 15 33 PM" src="https://user-images.githubusercontent.com/11462208/173921661-407e5421-a0e2-42c7-bf66-2bcf8b9b8cee.png">
+![Amplitude projects nav](docs/screenshots/projects-nav.png)
 
 In the top right-hand corner, click the Create Project button and follow the instructions.
 
-<img width="1785" alt="Screen Shot 2022-06-15 at 4 17 13 PM" src="https://user-images.githubusercontent.com/11462208/173921718-7979fb4d-0d9a-48e6-aa62-d4424fb38119.png">
+![Amplitude create new project](docs/screenshots/new-project.png)
 
 Next, install the package as a devDependency in your project:
 
@@ -55,7 +58,7 @@ in `storybook/main.js`
 ```diff
 module.exports: {
   addons: [
-+   '@amplitude/storybook-addon-amplitude/preset',
++   '@amplitude/storybook-addon-amplitude',
   ]
 }
 ```
@@ -97,11 +100,19 @@ Now your Storybook will begin emitting events to your project in Amplitude. You'
 
 **Weekly unique users viewing Storybook documentation**
 
-<img width="1494" alt="Screen Shot 2022-05-24 at 1 04 57 PM" src="https://user-images.githubusercontent.com/11462208/174133601-7f29014b-1e6e-4060-ba4c-ad478b43607e.png">
+![Amplitude weekly unique users chart](docs/screenshots/weekly-uniques.png)
 
-**Most commonly referenced Storybook categories**
+**Most commonly referenced categories**
 
-<img width="1792" alt="Screen Shot 2022-05-31 at 1 54 41 PM" src="https://user-images.githubusercontent.com/11462208/174133334-251dd4b8-29ae-402f-a32e-3a98ceeb4747.png">
+![Amplitude referenced categories chart](docs/screenshots/referenced-categories.png)
+
+**Most viewed components**
+
+![Amplitude most viewed components chart](docs/screenshots/viewed-components.png)
+
+**Components with most modified arguments**
+
+![Amplitude most modified arguments chart](docs/screenshots/modified-args.png)
 
 ## Event Taxonomy
 
@@ -113,8 +124,8 @@ When a user switches to a new page, this addon emits an event to Amplitude that 
 {
   event_type: "viewed documentation",
   event_properties: {
-    category: 'variants',
-    page: "secondarybuttongroup"
+    category: "actions",
+    page: "button"
   }
 }
 ```
@@ -133,8 +144,8 @@ When a user changes a story's args, this addon emits an event that looks like th
 {
   event_type: "updated story args",
   event_properties: {
-    category: 'variants',
-    page: "secondarybuttongroup"
+    category: "actions",
+    page: "button"
   }
 }
 ```
@@ -149,13 +160,13 @@ Tracking the event in this way allows you to build charts in Amplitude to answer
 
 ### Events not showing up in Amplitude?
 
-- Verify your API keys are correctly set in `storybook/manager.js`
-- Check your browser's console for any error messages
+- Verify your API keys are correctly set in `storybook/manager.ts`
+- Set `window.AMPLITUDE_OPTIONS = { logLevel: 4 };` in `storybook/manager.ts` and check your browser's console for any error messages
 - Ensure you're using the correct server URL for your region
 
 ### Storybook not loading?
 
-- Make sure the addon is properly installed and configured in `storybook/main.js`
+- Make sure the addon is properly installed and configured in `storybook/main.ts`
 - Check that your Storybook version is compatible (9.0 or higher)
 
 ## Contributing
@@ -168,6 +179,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-Created by: [Mae Capozzi](https://github.com/maecapozzi)
+**Owner:** [Amplitude](https://github.com/amplitude)
 
-Maintained by: [Mae Capozzi](https://github.com/maecapozzi), [Jack McCloy](https://github.com/jackmccloy), and [Jimmy Wilson](https://github.com/jimmynotjim)
+**Current Maintainer:** [Jimmy Wilson](https://github.com/jimmynotjim)
+
+**Contributors:**
+
+- [Mae Capozzi](https://github.com/maecapozzi)
+- [Jack McCloy](https://github.com/jackmccloy)
+- [Tijmen van Gurp](https://github.com/tijmenvangurp)
+- [Kaelig Deloumeau-Prigent](https://github.com/kaelig)
+- [Slave Mitev](https://github.com/smitev)
