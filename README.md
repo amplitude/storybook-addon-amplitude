@@ -1,35 +1,58 @@
 # storybook-addon-amplitude
 
-A storybook addon to capture events in [Amplitude](https://amplitude.com/).
+A Storybook addon to capture events in [Amplitude](https://amplitude.com/).
+
+[![version][version-badge]][package] [![MIT License][license-badge]][license] [![Auto Release][auto-badge]][auto] [![PRs Welcome][prs-badge]][issues] [![All Contributors](https://img.shields.io/badge/all_contributors-6-green.svg?style=flat)](#contributors)
 
 Read the [blog post here](https://amplitude.engineering/product-analytics-for-storybook-introducing-the-amplitude-storybook-add-on-e8857fb8168a).
 
+## Prerequisites
+
+- Node.js 20 or higher
+- Storybook 9.0 or higher
+- An Amplitude account (free tier available)
+
+## Version Compatibility
+
+| Storybook Version | Addon Version |
+| ----------------- | ------------- |
+| 9.x               | 3.x           |
+| 8.x               | >= 2.1.0      |
+| 7.x               | 2.0.0-2.0.1   |
+| 6.x               | 1.x           |
+
 ## What does it do?
 
-The Amplitude Storybook add-on emits events to Amplitude on two different occasions: when a user navigates to a new page and when a user changes a story's args.
+The Amplitude Storybook addon emits events to Amplitude on two different occasions: when a user navigates to a new page and when a user changes a story's args.
 
 ## Getting Started
 
-The first thing you’ll need to do is sign up for Amplitude. If you already have an account, great! If you don’t, you can [sign up here](https://amplitude.com/get-started) for free. 
+The first thing you'll need to do is sign up for Amplitude. If you already have an account, great! If you don't, you can [sign up here for free](https://amplitude.com/get-started).
 
-Once you have an account, you can create a new project which will have an associated API key. 
+Once you have an account, you can create a new project which will have an associated API key.
+
+_Note: You may want to create both a prod project and a dev project so you can test without influencing your data_
 
 To do this, navigate to the Settings page.
 
-<img width="560" alt="Screen Shot 2022-06-15 at 4 12 52 PM" src="https://user-images.githubusercontent.com/11462208/173921586-d06571ba-c533-45e6-994f-b7c29c1e669e.png">
+![Amplitude organization settings nav](docs/screenshots/org-settings.png)
 
-Then, select Projects in the sidebar. 
+Then, select Projects in the sidebar.
 
-<img width="462" alt="Screen Shot 2022-06-15 at 4 15 33 PM" src="https://user-images.githubusercontent.com/11462208/173921661-407e5421-a0e2-42c7-bf66-2bcf8b9b8cee.png">
+![Amplitude projects nav](docs/screenshots/projects-nav.png)
 
-In the top right hand corner, click the Create Project button and follow the instructions.
+In the top right-hand corner, click the Create Project button and follow the instructions.
 
-<img width="1785" alt="Screen Shot 2022-06-15 at 4 17 13 PM" src="https://user-images.githubusercontent.com/11462208/173921718-7979fb4d-0d9a-48e6-aa62-d4424fb38119.png">
+![Amplitude create new project](docs/screenshots/new-project.png)
 
 Next, install the package as a devDependency in your project:
 
 ```console
+# Using yarn
 yarn add @amplitude/storybook-addon-amplitude --dev
+
+# Using npm
+npm install @amplitude/storybook-addon-amplitude --save-dev
 ```
 
 in `storybook/main.js`
@@ -37,7 +60,7 @@ in `storybook/main.js`
 ```diff
 module.exports: {
   addons: [
-+   '@amplitude/storybook-addon-amplitude/preset',
++   '@amplitude/storybook-addon-amplitude',
   ]
 }
 ```
@@ -45,21 +68,21 @@ module.exports: {
 Then, set your Amplitude API keys in `./storybook/manager.js`
 
 ```ts
-window.AMPLITUDE_DEV_API_KEY = '<amplitude-dev-api-key>';
-window.AMPLITUDE_PROD_API_KEY = '<amplitude-prod-api-key>';
+window.AMPLITUDE_DEV_API_KEY = "<amplitude-dev-api-key>";
+window.AMPLITUDE_PROD_API_KEY = "<amplitude-prod-api-key>";
 ```
 
 If you want to post to the EU endpoint make sure to set the `serverUrl` option:
 
 ```ts
 window.AMPLITUDE_OPTIONS = {
-  serverUrl: 'https://api.eu.amplitude.com/2/httpapi',
+  serverUrl: "https://api.eu.amplitude.com/2/httpapi",
 };
 ```
 
-> Read more: [Configurations](https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/#configuration), [Endpoints](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/#endpoints)
+> Read more: [Configurations](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk), [Endpoints](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/#endpoints)
 
-If you are in a typescript project you might want to add the following declarations:
+If you are in a TypeScript project you might want to add the following declarations:
 
 ```ts
 declare global {
@@ -73,32 +96,38 @@ declare global {
 }
 ```
 
-Now your storybook will begin emitting events to your project in Amplitude. You’re ready to start creating charts in Amplitude!
+Now your Storybook will begin emitting events to your project in Amplitude. You're ready to start creating charts in Amplitude!
 
 ## Example Charts
 
 **Weekly unique users viewing Storybook documentation**
 
-<img width="1494" alt="Screen Shot 2022-05-24 at 1 04 57 PM" src="https://user-images.githubusercontent.com/11462208/174133601-7f29014b-1e6e-4060-ba4c-ad478b43607e.png">
+![Amplitude weekly unique users chart](docs/screenshots/weekly-uniques.png)
 
+**Most commonly referenced categories**
 
+![Amplitude referenced categories chart](docs/screenshots/referenced-categories.png)
 
-**Most commonly referenced Storybook categories**
+**Most viewed components**
 
-<img width="1792" alt="Screen Shot 2022-05-31 at 1 54 41 PM" src="https://user-images.githubusercontent.com/11462208/174133334-251dd4b8-29ae-402f-a32e-3a98ceeb4747.png">
+![Amplitude most viewed components chart](docs/screenshots/viewed-components.png)
 
+**Components with most modified arguments**
+
+![Amplitude most modified arguments chart](docs/screenshots/modified-args.png)
 
 ## Event Taxonomy
 
 ### User navigates to a new page
-When a user switches to a new page, this add-on emits an event to Amplitude that looks like this:
+
+When a user switches to a new page, this addon emits an event to Amplitude that looks like this:
 
 ```
 {
-  event_type: "viewed documentation", 
+  event_type: "viewed documentation",
   event_properties: {
-    category: 'variants', 
-    page: "secondarybuttongroup"
+    category: "actions",
+    page: "button"
   }
 }
 ```
@@ -109,26 +138,87 @@ Tracking the event in this way allows you to build charts in Amplitude to show:
 2. What categories people are viewing most frequently
 3. What pages people are viewing most frequently
 
-### User changes a story’s args
-When a user changes a story's args, this add-on emits an event that looks like this:
+### User changes a story's args
+
+When a user changes a story's args, this addon emits an event that looks like this:
 
 ```
 {
-  event_type: "updated story args", 
+  event_type: "updated story args",
   event_properties: {
-    category: 'variants', 
-    page: "secondarybuttongroup"
+    category: "actions",
+    page: "button"
   }
 }
 ```
- 
+
 Tracking the event in this way allows you to build charts in Amplitude to answer:
 
 1. How often do people use the story args functionality?
 2. In which category of pages people update the story args most frequently?
 3. On which pages people update the story args most frequently?
 
-## Credits
-Created by: [Mae Capozzi](https://github.com/maecapozzi)
+## Troubleshooting
 
-Maintained by: [Mae Capozzi](https://github.com/maecapozzi), [Jack McCloy](https://github.com/jackmccloy), and [Jimmy Wilson](https://github.com/jimmynotjim)
+### Events not showing up in Amplitude?
+
+- Verify your API keys are correctly set in `storybook/manager.ts`
+- Set `window.AMPLITUDE_OPTIONS = { logLevel: 4 };` in `storybook/manager.ts` and check your browser's console for any error messages
+- Ensure you're using the correct server URL for your region
+
+### Storybook not loading?
+
+- Make sure the addon is properly installed and configured in `storybook/main.ts`
+- Check that your Storybook version is compatible (9.0 or higher)
+
+## Contributing
+
+We are always happy to receive contributions! Please [refer to our CONTRIBUTING guidelines](CONTRIBUTING) for more details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+**Owner:** [Amplitude Inc](https://github.com/amplitude)
+
+**Current Maintainer:** [Jimmy Wilson (@jimmynotjim)](https://github.com/jimmynotjim)
+
+**Contributors:**
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jimmynotjim"><img src="https://avatars.githubusercontent.com/u/1280430?v=4?s=100" width="100px;" alt="Jimmy Wilson"/><br /><sub><b>Jimmy Wilson</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/issues?q=author%3Ajimmynotjim" title="Bug reports">🐛</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Code">💻</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Documentation">📖</a> <a href="#example-jimmynotjim" title="Examples">💡</a> <a href="#infra-jimmynotjim" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Ajimmynotjim" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jimmynotjim" title="Tests">⚠️</a> <a href="#tool-jimmynotjim" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/maecapozzi"><img src="https://avatars.githubusercontent.com/u/11462208?v=4?s=100" width="100px;" alt="Mae Capozzi"/><br /><sub><b>Mae Capozzi</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/issues?q=author%3Amaecapozzi" title="Bug reports">🐛</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Code">💻</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Documentation">📖</a> <a href="#example-maecapozzi" title="Examples">💡</a> <a href="#infra-maecapozzi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Amaecapozzi" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=maecapozzi" title="Tests">⚠️</a> <a href="#tool-maecapozzi" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jackmccloy"><img src="https://avatars.githubusercontent.com/u/7756138?v=4?s=100" width="100px;" alt="Jack McCloy"/><br /><sub><b>Jack McCloy</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=jackmccloy" title="Code">💻</a> <a href="#infra-jackmccloy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Ajackmccloy" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/tijmenvangurp"><img src="https://avatars.githubusercontent.com/u/9990026?v=4?s=100" width="100px;" alt="Tijmen van Gurp"/><br /><sub><b>Tijmen van Gurp</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=tijmenvangurp" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kaelig"><img src="https://avatars.githubusercontent.com/u/85783?v=4?s=100" width="100px;" alt="Kaelig Deloumeau-Prigent"/><br /><sub><b>Kaelig Deloumeau-Prigent</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=kaelig" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/smitev"><img src="https://avatars.githubusercontent.com/u/1855067?v=4?s=100" width="100px;" alt="Slave Mitev"/><br /><sub><b>Slave Mitev</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/commits?author=smitev" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bsoe003"><img src="https://avatars.githubusercontent.com/u/6354477?v=4?s=100" width="100px;" alt="Brian Soe"/><br /><sub><b>Brian Soe</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Absoe003" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vuamp"><img src="https://avatars.githubusercontent.com/u/111805785?v=4?s=100" width="100px;" alt="Vu Nguyen"/><br /><sub><b>Vu Nguyen</b></sub></a><br /><a href="https://github.com/jimmynotjim/@amplitude/storybook-addon-amplitude/pulls?q=is%3Apr+reviewed-by%3Avuamp" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+[package]: https://www.npmjs.com/package/@amplitude/storybook-addon-amplitude
+[version-badge]: https://img.shields.io/npm/v/@amplitude/storybook-addon-amplitude.svg?style=flat
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license]: https://github.com/amplitude/storybook-addon-amplitude/blob/main/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat
+[issues]: https://github.com/amplitude/storybook-addon-amplitude/issues?q=archived:false+is:issue+is:open+sort:updated-desc+label%3A%22help%20wanted%22%2C%22good%20first%20issue%22
+[auto-badge]: https://img.shields.io/badge/release-auto.svg?colorA=888888&colorB=9B065A&label=auto
+[auto]: https://github.com/intuit/auto

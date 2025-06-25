@@ -1,8 +1,14 @@
 #!/usr/bin/env zx
 
-const packageJson = require("../package.json");
 const boxen = require("boxen");
 const dedent = require("dedent");
+
+const { globalPackages: globalManagerPackages } = require("storybook/internal/manager/globals");
+const { globalPackages: globalPreviewPackages } = require("storybook/internal/preview/globals");
+
+const { readFile } = require("node:fs/promises");
+
+const packageJson = await readFile("./package.json", "utf8").then(JSON.parse);
 
 const name = packageJson.name;
 const displayName = packageJson.storybook.displayName;
@@ -24,8 +30,8 @@ if (name.includes("addon-kit") || displayName.includes("Addon Kit")) {
 
       Please configure appropriate metadata before publishing your addon. For more info, see:
       https://storybook.js.org/docs/react/addons/addon-catalog#addon-metadata`)}`,
-      { padding: 1, borderColor: "red" }
-    )
+      { padding: 1, borderColor: "red" },
+    ),
   );
 
   exitCode = 1;
@@ -46,11 +52,36 @@ if ((await $`cat README.md | grep -E ${readmeTestStrings}`.exitCode) == 0) {
         ${chalk.red(dedent`You are using the default README.md file that comes with the addon kit.
         Please update it to provide info on what your addon does and how to use it.`)}
       `,
-      { padding: 1, borderColor: "red" }
-    )
+      { padding: 1, borderColor: "red" },
+    ),
   );
 
   exitCode = 1;
 }
+
+/**
+ * Check that globalized packages are not incorrectly listed as peer dependencies
+ */
+const peerDependencies = Object.keys(packageJson.peerDependencies || {});
+const globalPackages = [...globalManagerPackages, ...globalPreviewPackages];
+peerDependencies.forEach((dependency) => {
+  if (globalPackages.includes(dependency)) {
+    console.error(
+      boxen(
+        dedent`
+          ${chalk.red.bold("Unnecessary peer dependency")}
+
+          ${chalk.red(dedent`You have a peer dependency on ${chalk.bold(dependency)} which is most likely unnecessary
+          as that is provided by Storybook directly.
+          Check the "bundling" section in README.md for more information.
+          If you are absolutely sure you are doing it correct, you should remove this check from scripts/prepublish-checks.js.`)}
+        `,
+        { padding: 1, borderColor: "red" },
+      ),
+    );
+
+    exitCode = 1;
+  }
+});
 
 process.exit(exitCode);

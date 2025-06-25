@@ -1,7 +1,10 @@
 import { window as globalWindow } from "global";
-import { addons } from "@storybook/manager-api";
-import { STORY_CHANGED, STORY_ARGS_UPDATED } from "@storybook/core-events";
-import { parsePath } from "../parsePath";
+import { addons } from "storybook/manager-api";
+import {
+  STORY_CHANGED,
+  STORY_ARGS_UPDATED,
+} from "storybook/internal/core-events";
+import { parsePath } from "./parsePath";
 
 import * as amplitude from "@amplitude/analytics-browser";
 
@@ -10,13 +13,13 @@ addons.register("storybook/amplitude", (api) => {
     amplitude.init(
       globalWindow.AMPLITUDE_PROD_API_KEY,
       null,
-      globalWindow.AMPLITUDE_OPTIONS
+      globalWindow.AMPLITUDE_OPTIONS,
     );
   } else {
     amplitude.init(
       globalWindow.AMPLITUDE_DEV_API_KEY,
       null,
-      globalWindow.AMPLITUDE_OPTIONS
+      globalWindow.AMPLITUDE_OPTIONS,
     );
   }
 
@@ -28,8 +31,8 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "viewed documentation", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`viewed documentation`, {
-      category: `${parsedPath.category?.split("-")[0]}`,
+    amplitude.track("viewed documentation", {
+      category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
   });
@@ -42,7 +45,7 @@ addons.register("storybook/amplitude", (api) => {
      *
      * example event: {event_type: "updated story args", event_properties: {category: 'variants', page: "secondarybuttongroup"}}
      */
-    amplitude.track(`updated story args`, {
+    amplitude.track("updated story args", {
       category: parsedPath.category?.split("-")[0],
       page: parsedPath.page,
     });
