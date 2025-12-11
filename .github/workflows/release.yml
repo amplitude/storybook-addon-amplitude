@@ -6,6 +6,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    permissions:
+      id-token: write  # Required for OIDC/Trusted Publishing
+      contents: write  # Required for creating releases
     steps:
       - uses: actions/checkout@v4
 
@@ -23,6 +26,5 @@ jobs:
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn run release
