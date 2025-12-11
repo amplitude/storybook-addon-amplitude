@@ -3,7 +3,9 @@
   "projectOwner": "jimmynotjim",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
@@ -45,42 +47,59 @@
       "name": "Jack McCloy",
       "avatar_url": "https://avatars.githubusercontent.com/u/7756138?v=4",
       "profile": "https://github.com/jackmccloy",
-      "contributions": ["code", "infra", "review"]
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
     },
     {
       "login": "tijmenvangurp",
       "name": "Tijmen van Gurp",
       "avatar_url": "https://avatars.githubusercontent.com/u/9990026?v=4",
       "profile": "https://github.com/tijmenvangurp",
-      "contributions": ["code"]
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "kaelig",
       "name": "Kaelig Deloumeau-Prigent",
       "avatar_url": "https://avatars.githubusercontent.com/u/85783?v=4",
       "profile": "https://github.com/kaelig",
-      "contributions": ["code"]
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "smitev",
       "name": "Slave Mitev",
       "avatar_url": "https://avatars.githubusercontent.com/u/1855067?v=4",
       "profile": "https://github.com/smitev",
-      "contributions": ["code"]
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "infra"
+      ]
     },
     {
       "login": "bsoe003",
       "name": "Brian Soe",
       "avatar_url": "https://avatars.githubusercontent.com/u/6354477?v=4",
       "profile": "https://github.com/bsoe003",
-      "contributions": ["review"]
+      "contributions": [
+        "review"
+      ]
     },
     {
       "login": "vuamp",
       "name": "Vu Nguyen",
       "avatar_url": "https://avatars.githubusercontent.com/u/111805785?v=4",
       "profile": "https://github.com/vuamp",
-      "contributions": ["review"]
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
