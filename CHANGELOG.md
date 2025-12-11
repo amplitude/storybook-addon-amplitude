@@ -1,3 +1,20 @@
+# v3.0.0 (Thu Dec 11 2025)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Slave Mitev ([@smitev](https://github.com/smitev)), for all your work!
+
+#### 💥 Breaking Change
+
+- Release v3.0.0 [#65](https://github.com/amplitude/storybook-addon-amplitude/pull/65) ([@smitev](https://github.com/smitev) [@jimmynotjim](https://github.com/jimmynotjim))
+
+#### Authors: 2
+
+- Jimmy Wilson ([@jimmynotjim](https://github.com/jimmynotjim))
+- Slave Mitev ([@smitev](https://github.com/smitev))
+
+---
+
 # v2.1.0 (Mon Jun 23 2025)
 
 #### 🚀 Enhancement
