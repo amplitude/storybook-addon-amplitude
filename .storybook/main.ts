@@ -9,7 +9,6 @@ const config: StorybookConfig = {
 
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-onboarding",
     {
       name: "@amplitude/storybook-addon-amplitude",
       options: {
